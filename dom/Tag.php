@@ -16,8 +16,8 @@ function Tag($varargs = '') {
 }
 
 /**
- * Special "Tag-Builder" class.
- * Alot like the "genshi.tag" class/function/whatever from Edgewall's Genshi.
+ * "Tag Builder" helper class.
+ * Similar to the "genshi.tag" magic (by Edgewall).
  * @author Ethan
  */
 class Tag extends BaseDom {

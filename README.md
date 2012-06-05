@@ -18,3 +18,7 @@ $html = Tag(
 
 echo Tag::p($html); //<p>To return home, click <a href="/home/index.php">here</a>.</p>
 ```
+
+License
+=======
+http://eib.mit-license.org/
