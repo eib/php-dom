@@ -5,6 +5,8 @@ class BaseDom implements ArrayAccess {
 	protected $innerHTML;
 	protected $is_self_closing;
 	protected $attributes = array(); //delegate for ArrayAccess methods
+	
+	//TODO: support for different doctypes: self-closing elements, which elements don't need to close, etc.
 	private static $self_closing_tags = array('area', 'base', 'basefont', 'br', 'hr', 'input', 'img', 'link', 'meta');
 	
 	protected function __construct($tag_name, $innerHTML = '', $attributes = array()) {
@@ -26,7 +28,11 @@ class BaseDom implements ArrayAccess {
 		} else {
 			return "<{$this->tag}" . join('', $html_attributes) . ">{$this->innerHTML}</{$this->tag}>";
 		}
-	}	
+	}
+	
+	public function setSelfClosing($is_self_closing = TRUE) {
+		$this->is_self_closing = $is_self_closing;
+	}
 	
 	public function __toString() {
 		return $this->toHTML();
@@ -59,6 +65,5 @@ class BaseDom implements ArrayAccess {
 		$dom = new BaseDom($tag_name, $innerHTML, $attributes);
 		return $dom;
 	}
-	
 	
 }
