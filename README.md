@@ -2,11 +2,11 @@ php-dom
 =======
 
 Contents:
-* DOM modelling classes.
+* DOM modeling classes.
 * Includes a "tag-builder" helper class.
 
 Examples:
-```
+```php
 require_once('dom/bootstrap.php');
 ...
 
